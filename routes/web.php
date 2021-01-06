@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/scraping', function () {
+    
+    return 'oi';
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
 })->name('dashboard');
