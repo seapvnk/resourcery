@@ -23,5 +23,5 @@ Route::get('/scraping', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia\Inertia::render('Dashboard');
+    return view('dashboard.index');
 })->name('dashboard');
