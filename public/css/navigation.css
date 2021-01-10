@@ -101,6 +101,8 @@ a.dropdown-toggle:hover,
     align-content: center !important;
     justify-content: center !important;
     width: 100%;
+    z-index: 3 !important;
+    position: relative;
 }
 
 .default-nav-bottom a { 

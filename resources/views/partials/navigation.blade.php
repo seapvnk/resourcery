@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white border border-top-0 border-bottom-secondary px-3 p-1 default-nav">
+<nav class="navbar navbar-expand-lg navbar-light bg-white border border-0  px-3 p-1 default-nav">
   <div class="container-fluid">
     <a class="navbar-brand text-primary" href="#">
       <div class="logo">
@@ -78,18 +78,20 @@
   </div>
 </nav>
 
-<div class="p-3 px-4 bg-light shadow-sm shadow-bottom default-nav-bottom">
-  <a href="" class="link-secondary">Desenvolvimento</a>
-  <a href="" class="link-secondary">Negócios</a>
-  <a href="" class="link-secondary">Finanças e contabilidade</a>
-  <a href="" class="link-secondary">TI e software</a>
-  <a href="" class="link-secondary">Produtividade no escritório</a>
-  <a href="" class="link-secondary">Desenvolvimento Pessoal</a>
-  <a href="" class="link-secondary">Design</a>
-  <a href="" class="link-secondary">Marketing</a>
-  <a href="" class="link-secondary">Saúde e fitness</a>
-  <a href="" class="link-secondary">Música</a>
-</div>
+@auth
+  <div class="p-3 px-4 bg-light shadow default-nav-bottom border-top">
+    <a href="" class="link-secondary">Desenvolvimento</a>
+    <a href="" class="link-secondary">Negócios</a>
+    <a href="" class="link-secondary">Finanças e contabilidade</a>
+    <a href="" class="link-secondary">TI e software</a>
+    <a href="" class="link-secondary">Produtividade no escritório</a>
+    <a href="" class="link-secondary">Desenvolvimento Pessoal</a>
+    <a href="" class="link-secondary">Design</a>
+    <a href="" class="link-secondary">Marketing</a>
+    <a href="" class="link-secondary">Saúde e fitness</a>
+    <a href="" class="link-secondary">Música</a>
+  </div>
+@endauth
 
 <script>
 
