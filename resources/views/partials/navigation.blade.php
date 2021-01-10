@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white border border-bottom-secondary px-3 p-1 default-nav">
+<nav class="navbar navbar-expand-lg navbar-light bg-white border border-top-0 border-bottom-secondary px-3 p-1 default-nav">
   <div class="container-fluid">
     <a class="navbar-brand text-primary" href="#">
       <div class="logo">

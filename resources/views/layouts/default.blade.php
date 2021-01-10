@@ -20,6 +20,7 @@
 </head>
 <body>
 
+    @include('partials.alert')
     @include('partials.navigation')
 
     <div class="container">

@@ -1,0 +1,21 @@
+.bg-light {
+    background-color:#fbfbfb !important;
+}
+
+.alert {
+    font-size: 16px !important;
+}
+
+.alert-primary {
+    color: #003640 !important;
+    background-color: #8ed1dc !important;
+    border-color: #8ed1dc !important;
+}
+
+.alert-warning {
+    color: #593d00;
+    background-color: #ffe799 !important;
+    border-color: #ffe799 !important;
+}
+
+.alert strong { margin-right: 5px; }

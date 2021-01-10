@@ -1,10 +1,5 @@
 /* Imports */
 @import './navigation.css';
-
-/* Global styles */
-
-.bg-light {
-    background-color:#fbfbfb !important;
-}
+@import './utilities.css';
 
 
