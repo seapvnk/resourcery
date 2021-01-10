@@ -8,3 +8,10 @@
     z-index: 1 !important;
     position: relative;
 }
+
+@media (max-width: 768px) {
+    .default-container {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+}

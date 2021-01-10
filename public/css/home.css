@@ -5,3 +5,46 @@
     background-size: cover;
     z-index: 1 !important;
 }
+
+.hero .hero-card {
+    width: 425px;
+    color: #3c3b37 !important;
+    position: relative;
+    z-index: 4 !important;
+    margin: 2rem 1.4rem;
+}
+
+.hero .hero-card-bottom { display: none; }
+
+.hero .hero-card h3 {
+    font-weight: bolder;
+    font-size: 2.8rem;
+}
+
+.hero .hero-card p {
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 250px;
+        width: 100% !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1 !important;
+    }
+
+    .hero .hero-card {
+        display: none !important;
+    }
+
+    .hero .hero-card {
+        width: 100%;
+        color: #3c3b37 !important;
+        position: relative;
+        z-index: 4 !important;
+        margin: 2rem 1.4rem;
+    }
+}
