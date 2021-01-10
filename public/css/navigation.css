@@ -109,7 +109,23 @@ a.dropdown-toggle:hover,
     margin: 0 .8rem;
 }
 
+.default-nav .dropdown-menu.show { 
+    width: 450px;
+}
+
 @media (max-width: 768px) {
+    .default-nav form { width: 100% !important; }
+
+    .default-nav .dropdown { 
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }
+
+    .default-nav .dropdown-menu.show { 
+        width: 100% !important;
+        border: none !important;
+    }
+
     .default-nav-bottom { display:  none !important; }
     
     .search-input {

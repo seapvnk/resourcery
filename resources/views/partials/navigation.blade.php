@@ -3,7 +3,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <a class="navbar-brand text-primary" href="#">
       <div class="logo">
         <span class="logo-icon">R</span>
@@ -93,14 +93,3 @@
     <a href="" class="link-secondary">Música</a>
   </div>
 @endauth
-
-<script>
-
-const dropDown = document.querySelector('#navbarDropdown');
-
-dropDown.addEventListener('mouseover', () => {
-  dropDown.click()
-})
-
-
-</script>
