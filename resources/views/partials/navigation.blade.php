@@ -1,6 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white border border-bottom-secondary p-3 default-nav">
+<nav class="navbar navbar-expand-lg navbar-light bg-white border border-bottom-secondary px-3 p-1 default-nav">
   <div class="container-fluid">
-    <a class="navbar-brand text-primary" href="#">Resourcery</a>
+    <a class="navbar-brand text-primary" href="#">
+      <div class="logo">
+        <span class="logo-icon">R</span>
+        Rsrcy
+      </div>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,9 +18,16 @@
           </a>
 
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Desenvolvimento</a></li>
+            <li><a class="dropdown-item" href="#">Negócios</a></li>
+            <li><a class="dropdown-item" href="#">Finanças e contabilidade</a></li>
+            <li><a class="dropdown-item" href="#">TI e Software</a></li>
+            <li><a class="dropdown-item" href="#">Produtividade no escritório</a></li>
+            <li><a class="dropdown-item" href="#">Desenvolvimento Pessoal</a></li>
+            <li><a class="dropdown-item" href="#">Design</a></li>
+            <li><a class="dropdown-item" href="#">Marketing</a></li>
+            <li><a class="dropdown-item" href="#">Saúde e fitness</a></li>
+            <li><a class="dropdown-item" href="#">Música</a></li>
           </ul>
         </li>
 
@@ -31,9 +43,18 @@
           <a href="#" class="link-secondary text-decoration-none px-4">Converse conosco</a>
         </li>
 
+        <li class="nav-item dropdown">
+          <a href="#" class="link-secondary text-decoration-none px-4">Saber mais</a>
+        </li>
+
         @auth
             <li class="nav-item">
-              <a href="{{ url('/dashboard') }}" class="link-secondary text-decoration-none px-4">Meu aprendizado</a>
+              <a href="{{ url('/dashboard') }}" class="link-secondary text-decoration-none px-3">Meu aprendizado</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{{ url('/dashboard') }}" class="link-secondary text-decoration-none px-2"> <i class="bi bi-heart"></i> </a>
+              <a href="{{ url('/dashboard') }}" class="link-secondary text-decoration-none px-2"> <i class="bi bi-bell"></i> </a>
             </li>
 
             <li class="nav-item px-4">
@@ -57,13 +78,17 @@
   </div>
 </nav>
 
-<div class="p-3 px-4 bg-light shadow-sm shadow-bottom row default-nav">
-  <a href="" class="link-secondary col">Lorem, ipsum.</a>
-  <a href="" class="link-secondary col">Lorem, ipsum.</a>
-  <a href="" class="link-secondary col">Lorem, ipsum.</a>
-  <a href="" class="link-secondary col">Lorem, ipsum.</a>
-  <a href="" class="link-secondary col">Lorem, ipsum.</a>
-  <a href="" class="link-secondary col">Lorem, ipsum.</a>
+<div class="p-3 px-4 bg-light shadow-sm shadow-bottom default-nav-bottom">
+  <a href="" class="link-secondary">Desenvolvimento</a>
+  <a href="" class="link-secondary">Negócios</a>
+  <a href="" class="link-secondary">Finanças e contabilidade</a>
+  <a href="" class="link-secondary">TI e software</a>
+  <a href="" class="link-secondary">Produtividade no escritório</a>
+  <a href="" class="link-secondary">Desenvolvimento Pessoal</a>
+  <a href="" class="link-secondary">Design</a>
+  <a href="" class="link-secondary">Marketing</a>
+  <a href="" class="link-secondary">Saúde e fitness</a>
+  <a href="" class="link-secondary">Música</a>
 </div>
 
 <script>

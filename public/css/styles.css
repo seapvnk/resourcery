@@ -1,75 +1,10 @@
-/* CSS */
+/* Imports */
+@import './navigation.css';
+
+/* Global styles */
 
 .bg-light {
     background-color:#fbfbfb !important;
 }
 
-.search-button,
-.search-button:focus {
-    margin-right: -2.6rem;
-    margin-top: 2px;
-    z-index: 5;
-    border: none;
-    outline: none !important;
-    box-shadow: none;
-}
 
-
-.search-input {
-    z-index: 3;
-    padding-left: 2rem;
-    width: 35vw;
-    border-color: rgb(60, 59, 55) !important;
-    height: 46px !important;
-}
-
-/* DEFAULT NAV */
-
-.default-nav #navbarDropdown::after { display: none !important; }
-
-.default-nav .dropdown-menu.show {
-    border-radius: 0;
-    font-size: 16px !important;
-}
-
-.default-nav a.link-secondary,
-.default-nav .dropdown-toggle { 
-    font-size: 14px !important; 
-    font-weight: 400 !important;
-    line-height: 19px !important;
-    color: rgb(60, 59, 55) !important;
-}
-
-.default-nav .btn-primary,
-.default-nav .btn-outline-primary {
-    font-weight: 700;
-    font-size: 14px;
-    border-color: rgb(15, 124, 144) !important;
-}
-
-.default-nav .btn-outline-primary {
-    color: rgb(15, 124, 144) !important;
-}
-
-.default-nav .btn-primary,
-.default-nav .btn-outline-primary:hover, {
-    color: #ffffff !important;
-    background-color: rgb(15, 124, 144) !important;
-}
-
-.default-nav .btn-primary:hover {
-    background-color: rgb(25, 134, 154) !important;
-}
-
-a.link-secondary:hover, 
-a.dropdown-toggle:hover, 
-.dropdown-item:hover { 
-    color: #0f7c90 !important;
-    background-color: transparent !important;
-}
-
-@media screen and (max-width: 900px) {
-    .search-input {
-        width: 100%;
-    }
-}
