@@ -17,11 +17,7 @@ Route::get('/', function () {
     return view('home.index');
 });
 
-Route::get('/scraping', function () {
-    
-    return 'oi';
-});
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard.index');
 })->name('dashboard');
+

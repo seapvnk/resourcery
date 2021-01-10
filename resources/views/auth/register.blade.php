@@ -1,43 +1,44 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+@extends('layouts.default')
 
-        <x-jet-validation-errors class="mb-4" />
+@section('content')
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+    <form action="{{ route('register') }}" method="POST" class="default-form p-4">
+        @csrf
+        <strong>Inscreva-se e comece a aprender!</strong>
 
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
+        <div class="border-top my-3"></div>
 
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
+        <div class="form-group">
+            <span>
+                <i class="bi bi-person-fill"></i>
+            </span>
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
+            <input type="text" name="name" class="form-control" placeholder="Nome completo" required>
+        </div>
+        
+        <div class="form-group">
+            <span>
+                <i class="bi bi-person-fill"></i>
+            </span>
+            
+            <input type="text" name="name" class="form-control" placeholder="Nome completo" required>
+        </div>
 
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
+        <div class="form-group">
+            <span>
+                <i class="bi bi-person-fill"></i>
+            </span>
+            
+            <input type="text" name="name" class="form-control" placeholder="Nome completo" required>
+        </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
+        <input type="submit" value="Inscrever-se" class="btn btn-control btn-red btn-lg mb-2">
 
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        <small >Ao inscrever-se, você concorda com nossos <a href="#">Termos de uso</a> e nossa <a href="">Política de privacidade</a>.</small> 
+        <div class="border-top my-3"></div>
+
+        <p>Já tem uma conta? <a class="bold" href="{{ route('login') }}">Login</a> </p>
+
+    </form>
+
+@endsection

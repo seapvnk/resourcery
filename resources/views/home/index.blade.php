@@ -7,7 +7,8 @@
             <p>O aprendizado mantém você à frente. Adquira habilidades procuradas que vão deixar todos impressionados.</p>
         </div>
     </div>
-    <div class="bg-white hero-card-bottom p-4">
+
+    <div class="bg-white hero-card-bottom p-1">
         <h3>Busque sempre mais</h3>
         <p>O aprendizado mantém você à frente. Adquira habilidades procuradas que vão deixar todos impressionados.</p>
     </div>

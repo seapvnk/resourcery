@@ -14,7 +14,11 @@
     margin: 2rem 1.4rem;
 }
 
-.hero .hero-card-bottom { display: none; }
+.hero-card-bottom { display: none !important; }
+.hero-card-bottom h3 {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
 
 .hero .hero-card h3 {
     font-weight: bolder;
@@ -40,8 +44,8 @@
         display: none !important;
     }
 
-    .hero .hero-card {
-        width: 100%;
+    .hero-card-bottom {
+        display: block !important;
         color: #3c3b37 !important;
         position: relative;
         z-index: 4 !important;

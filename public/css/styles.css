@@ -2,12 +2,30 @@
 @import './navigation.css';
 @import './utilities.css';
 @import './home.css';
+@import './forms.css';
+
+:root {
+    --link-color: rgb(25, 134, 154);
+}
 
 .default-container {
     width: 100% !important;
     z-index: 1 !important;
     position: relative;
 }
+
+.btn-red {
+    background-color: #e5554f !important;
+    color: #ffffff;
+    border-radius: 3px;
+}
+
+.btn-control {
+    width: 100%;
+}
+
+.bold { font-weight: bold !important; }
+
 
 @media (max-width: 768px) {
     .default-container {
