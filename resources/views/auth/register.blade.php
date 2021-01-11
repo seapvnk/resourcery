@@ -8,6 +8,15 @@
 
         <div class="border-top my-3"></div>
 
+        @if ($errors->any())
+            <div class="alert alert-danger" style="text-align: left">
+                Erros ao registrar-se: <br>
+                @foreach ($errors->all() as $error)
+                    <small>{{ $error }}</small> <br>
+                @endforeach
+            </div>
+        @endif
+
         <div class="form-group">
             <span>
                 <i class="bi bi-person-fill"></i>
@@ -18,18 +27,18 @@
         
         <div class="form-group">
             <span>
-                <i class="bi bi-person-fill"></i>
+                <i class="bi bi-envelope-fill"></i>
             </span>
             
-            <input type="text" name="name" class="form-control" placeholder="Nome completo" required>
+            <input type="email" name="email" class="form-control" placeholder="E-mail" required>
         </div>
 
         <div class="form-group">
             <span>
-                <i class="bi bi-person-fill"></i>
+                <i class="bi bi-lock-fill"></i>
             </span>
             
-            <input type="text" name="name" class="form-control" placeholder="Nome completo" required>
+            <input type="password" name="password" class="form-control" placeholder="Senha" required>
         </div>
 
         <input type="submit" value="Inscrever-se" class="btn btn-control btn-red btn-lg mb-2">

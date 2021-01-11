@@ -23,7 +23,7 @@
     </div>
 
     <!-- Copyrights -->
-    <div class="bg-light py-4">
+    <div class="bg-white py-4">
       <div class="container text-center d-flex align-items-center" style="justify-content: space-between">
         <div class="logo">
             <span class="logo-icon">R</span>
