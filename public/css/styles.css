@@ -6,6 +6,7 @@
 
 :root {
     --link-color: rgb(25, 134, 154);
+    --link-color-darker: rgb(15, 124, 124);
 }
 
 .default-container {
@@ -26,6 +27,14 @@
 
 .bold { font-weight: bold !important; }
 
+footer a {
+    color: var(--link-color) !important;
+    text-decoration: none !important;
+}
+
+footer a:hover {
+    color: var(--link-color-darker) !important;
+}
 
 @media (max-width: 768px) {
     .default-container {
