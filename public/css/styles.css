@@ -3,6 +3,7 @@
 @import './utilities.css';
 @import './home.css';
 @import './forms.css';
+@import './components.css';
 
 :root {
     --link-color: rgb(25, 134, 154);

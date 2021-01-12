@@ -23,10 +23,31 @@ class CourseFactory extends Factory
      */
     public function definition()
     {
-        $titleBegin = Str::random(7);
-        $titleYear = date("Y");
+        $titlePrefix = Arr::random([
+            'Advanced',
+            'The modern',
+            'The complete',
+            'Ultimate',
+            'Master the'
+        ]);
+
+        $titleSubject = Arr::random([
+            'React framework',
+            'Laravel framework',
+            'Javascript language',
+            'PHP language'
+        ]);
+
+        $titleEnd = Arr::random([
+            'From Scratch',
+            'For Beginners',
+            'From Basics to Advanced'
+        ]);
+
+        $schoolName = $this->faker->name . Arr::random(['.io', 'Web', 'Masters']);
+        
         return [
-            'name' =>  "$titleBegin [$titleYear]  - " . $this->faker->sentence(2),
+            'name' =>  "$schoolName  - $titlePrefix $titleSubject $titleEnd",
             'language' => Arr::random(['PT', 'EN', 'ES']),
             'description' => $this->faker->sentence(5),
             'overview' => $this->faker->sentence(25),

@@ -1,0 +1,57 @@
+.card-course {
+    border: none;
+    border-radius: 0;
+    width: 240px;
+    flex-direction: column;
+    max-width: 37.5rem;
+    min-width: 17.3rem;
+}
+.card-course .card-body {
+    padding-left: 0;
+    padding-right: 0;
+}
+.card-course img {
+    width: 100%;
+    max-height: 135px;
+    object-fit: cover;
+    background-color: #1e1e1c;
+    border-radius: 4px;
+    border: 1px solid #dcdacb;
+    overflow: hidden;
+    transition: .3s;
+}
+.card-course img:hover {
+    filter: brightness(80%);
+}
+.card-course h5 {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -.2px;
+}
+.card-course small {
+    color: #73726c;
+    font-weight: 400;
+    font-size: 12px;
+}
+.card-course .card-course-rating .star-number {
+    color: #be5a0e;
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: .4rem;
+}
+
+.card-course .card-course-rating .star-rating {
+    color: #eb8a2f;
+    font-size: 12px;
+}
+.card-course .card-course-price {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -.02rem;
+}
+.card-course .rating-number {
+    color: #73726c;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: .4rem;
+}
