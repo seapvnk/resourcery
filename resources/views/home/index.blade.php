@@ -14,28 +14,11 @@
     </div>
 
     <div class="p-4">
-        <h2 class="mt-4 bold">O que aprender em seguida</h2>
-        <h3 class="mt-4 bold">Cursos recentes</h2>
+        <h3 class="mt-4 bold">Alunos estão assistindo</h2>
 
         <div class="row">
             @foreach ($courses as $course)
-                <div class="card card-course">
-                    <img src="{{ $course->cover_picture_path }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $course->name }}</h5>
-                        <small>{{ $course->author->name }}</small>
-                        <div class="card-course-rating">
-                            <span class="star-number">4.6</span>
-                            <span class="star-rating">
-                                @include('partials.rating', ['rating' => 4.6])
-                            </span>
-                            <span class="rating-number">
-                                (24.120)
-                            </span>
-                        </div>
-                        <span class="card-course-price">Gratuito</span>
-                    </div>
-                </div>
+                @include('course.partials.card')
             @endforeach
         </div>
         

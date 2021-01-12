@@ -5,6 +5,7 @@
     flex-direction: column;
     max-width: 37.5rem;
     min-width: 17.3rem;
+    cursor: pointer;
 }
 .card-course .card-body {
     padding-left: 0;

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Course;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
@@ -14,6 +15,9 @@ class CourseFactory extends Factory
      *
      * @var string
      */
+
+    use SoftDeletes;
+
     protected $model = Course::class;
 
     /**
@@ -45,9 +49,10 @@ class CourseFactory extends Factory
         ]);
 
         $schoolName = $this->faker->name . Arr::random(['.io', 'Web', 'Masters']);
-        
+        $courseName = "$schoolName  - $titlePrefix $titleSubject $titleEnd";
+
         return [
-            'name' =>  "$schoolName  - $titlePrefix $titleSubject $titleEnd",
+            'name' =>  $courseName,
             'language' => Arr::random(['PT', 'EN', 'ES']),
             'description' => $this->faker->sentence(5),
             'overview' => $this->faker->sentence(25),
@@ -55,6 +60,7 @@ class CourseFactory extends Factory
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/220px-Laravel.svg.png',
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/220px-React-icon.svg.png',
             ]),
+            'url' => Str::slug($courseName, '-'),
         ];
     }
 }
