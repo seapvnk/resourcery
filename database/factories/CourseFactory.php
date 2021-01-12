@@ -26,7 +26,7 @@ class CourseFactory extends Factory
         $titleBegin = Str::random(7);
         $titleYear = date("Y");
         return [
-            'name' =>  "$titleBegin [$titleYear]  - " . $this->faker->title,
+            'name' =>  "$titleBegin [$titleYear]  - " . $this->faker->sentence(2),
             'language' => Arr::random(['PT', 'EN', 'ES']),
             'description' => $this->faker->sentence(5),
             'overview' => $this->faker->sentence(25),
