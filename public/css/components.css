@@ -34,25 +34,145 @@
     font-weight: 400;
     font-size: 12px;
 }
-.card-course .card-course-rating .star-number {
+.card-course-rating .star-number {
     color: #be5a0e;
     font-weight: 700;
     font-size: 14px;
     margin-right: .4rem;
 }
 
-.card-course .card-course-rating .star-rating {
+.card-course-rating .star-rating {
     color: #eb8a2f;
     font-size: 12px;
 }
-.card-course .card-course-price {
+.card-course-price {
     font-weight: 700;
     font-size: 16px;
     letter-spacing: -.02rem;
 }
-.card-course .rating-number {
+.rating-number {
     color: #73726c;
     font-size: 12px;
     font-weight: 400;
     margin-left: .4rem;
+}
+
+.dark .card-course-rating .star-rating,
+.dark .card-course-rating .star-number {
+    color: #ffc48c;
+}
+
+.dark .rating-number {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.dark p {
+    line-height: 1;
+    font-size: 15px;
+    line-height: 19px;
+    margin: 10px 0;
+}
+
+.dark .description {
+    font-size: 1.2rem !important;
+    margin-bottom: 1.6rem;
+}
+
+.course-info {
+    padding: 1rem 8rem !important;
+}
+
+.card-course-info {
+    width: 340px;
+    position: absolute;
+}
+
+.card-course-info img {
+    border: 1px solid #dcdacb;
+    border-radius: 4px;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card-course-info .card-title {
+    letter-spacing: -.02rem;
+}
+
+.card-course-info .card-title sup {
+    color: #73726c;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.card-course-info .btn {
+    margin-top: 12px;
+    font-size: 16px;
+    height: 48px;
+    border-radius: 4px !important;
+    padding: 0 14px;
+}
+
+.card-course-info .btn-wish {
+    margin-top: 6px;
+}
+
+.btn-wish {
+    border-color: rgb(40, 150, 169);
+    color: rgb(15, 124, 144);
+}
+
+.card-course-info .btn-red {
+    background-color: rgb(236, 82, 82) !important;
+    border-color: rgb(236, 82, 82) !important;
+}
+
+.card-course-info .btn-red:hover {
+    background-color: #e61b1b !important;
+    border-color: #e61b1b !important;
+}
+
+.card-course-info p {
+    font-size: 16px;
+    color: #3c3b37;
+    margin: 0;
+    line-height: 19px;
+    margin-top: 6px;
+}
+
+.card-course-info p.price {
+    font-weight: 700;
+    color: #b32929;
+    font-size: 14px;
+}
+
+.card-course-info small {
+    font-weight: 400;
+    font-size: 12px;
+    margin: 12px auto;
+    color: #444444;
+    display: flex;
+    justify-content: center;
+}
+
+.card-course-info .features-title {
+    font-size: 18px !important;
+    margin-bottom: 12px;
+    margin-top: 1.4rem;
+}
+
+.features {
+    margin-bottom: 2rem;
+}
+
+.features p i {
+    margin-right: .6rem;
+    font-size: 16px;
+}
+
+.features p {
+    color: #444444 !important;
+    font-size: 14px;
 }

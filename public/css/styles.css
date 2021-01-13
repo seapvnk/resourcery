@@ -10,6 +10,10 @@
     --link-color-darker: rgb(15, 124, 124);
 }
 
+.link-author {
+    color: rgb(142, 209, 220);
+}
+
 .default-container {
     width: 100% !important;
     z-index: 1 !important;

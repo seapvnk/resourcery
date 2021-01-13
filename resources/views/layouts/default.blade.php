@@ -23,6 +23,8 @@
     @include('partials.alert')
     @include('partials.navigation')
 
+    @yield('header')
+
     <div class="default-container px-2">
         @yield('content')
     </div>
