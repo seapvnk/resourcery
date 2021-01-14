@@ -5,7 +5,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <a class="navbar-brand text-primary" href="#">
+      <a class="navbar-brand text-primary" href="{{ route('home') }}">
         <div class="logo">
           <span class="logo-icon">R</span>
           Rsrcy
