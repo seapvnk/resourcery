@@ -53,7 +53,7 @@ class CourseFactory extends Factory
 
         return [
             'name' =>  $courseName,
-            'language' => Arr::random(['PT', 'EN', 'ES']),
+            'language' => Arr::random(['Português', 'Español', 'English']),
             'description' => $this->faker->sentence(5),
             'overview' => $this->faker->sentence(25),
             'cover_picture_path' => Arr::random([
