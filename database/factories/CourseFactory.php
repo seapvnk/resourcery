@@ -56,11 +56,21 @@ class CourseFactory extends Factory
             'language' => Arr::random(['Português', 'Español', 'English']),
             'description' => $this->faker->sentence(5),
             'overview' => $this->faker->sentence(25),
+            'url' => Str::slug($courseName, '-'),
             'cover_picture_path' => Arr::random([
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/220px-Laravel.svg.png',
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/220px-React-icon.svg.png',
             ]),
-            'url' => Str::slug($courseName, '-'),
+            'category' => Arr::random([
+                'Desenvolvimento e TI',
+                'Artes e design',
+                'Negócios e finanças',
+                'Ensino e estudo acadêmico',
+                'Desenvolvimento pessoal',
+                'Estilo de vida',
+                'Idiomas',
+                'Saúde e fitness',
+            ])
         ];
     }
 }

@@ -20,16 +20,14 @@
             </a>
 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Desenvolvimento</a></li>
-              <li><a class="dropdown-item" href="#">Negócios</a></li>
-              <li><a class="dropdown-item" href="#">Finanças e contabilidade</a></li>
-              <li><a class="dropdown-item" href="#">TI e Software</a></li>
-              <li><a class="dropdown-item" href="#">Produtividade no escritório</a></li>
+              <li><a class="dropdown-item" href="#">Desenvolvimento e TI</a></li>
+              <li><a class="dropdown-item" href="#">Artes e Design</a></li>
+              <li><a class="dropdown-item" href="#">Negócios e Finanças</a></li>
+              <li><a class="dropdown-item" href="#">Ensino e estudo acadêmico</a></li>
               <li><a class="dropdown-item" href="#">Desenvolvimento Pessoal</a></li>
-              <li><a class="dropdown-item" href="#">Design</a></li>
-              <li><a class="dropdown-item" href="#">Marketing</a></li>
+              <li><a class="dropdown-item" href="#">Estilo de vida</a></li>
+              <li><a class="dropdown-item" href="#">Idiomas</a></li>
               <li><a class="dropdown-item" href="#">Saúde e fitness</a></li>
-              <li><a class="dropdown-item" href="#">Música</a></li>
             </ul>
           </li>
 
@@ -82,16 +80,14 @@
 
   @auth
     <div class="p-3 px-4 bg-light default-nav-bottom border-top">
-      <a href="" class="link-secondary">Desenvolvimento</a>
-      <a href="" class="link-secondary">Negócios</a>
-      <a href="" class="link-secondary">Finanças e contabilidade</a>
-      <a href="" class="link-secondary">TI e software</a>
-      <a href="" class="link-secondary">Produtividade no escritório</a>
-      <a href="" class="link-secondary">Desenvolvimento Pessoal</a>
-      <a href="" class="link-secondary">Design</a>
-      <a href="" class="link-secondary">Marketing</a>
+      <a href="" class="link-secondary">Desenvolvimento e TI</a>
+      <a href="" class="link-secondary">Artes e design</a>
+      <a href="" class="link-secondary">Negócios e finanças</a>
+      <a href="" class="link-secondary">Ensino e estudo acadêmico</a>
+      <a href="" class="link-secondary">Desenvolvimento pessoal</a>
+      <a href="" class="link-secondary">Estilo de vida</a>
+      <a href="" class="link-secondary">Idiomas</a>
       <a href="" class="link-secondary">Saúde e fitness</a>
-      <a href="" class="link-secondary">Música</a>
     </div>
   @endauth
 </div>
