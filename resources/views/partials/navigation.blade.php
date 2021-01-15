@@ -46,7 +46,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a href="#" class="link-secondary text-decoration-none px-4">Saber mais</a>
+            <a href="#" class="link-secondary text-decoration-none px-4">Instrutor</a>
           </li>
 
           @auth
