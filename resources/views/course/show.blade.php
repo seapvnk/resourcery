@@ -7,6 +7,7 @@
 <div class="container-fluid dark text-white p-4 row" style="background-color: #1e1e1c">
 
     <div class="course-info container px-4 pb-4 col">
+        <a href="{{ route('course.list', $course->category) }}" class="mb-2 link-category">{{ $course->category }}</a>
         <h1 class="h2 bold" style="width: 630px">{{ $course->name }}</h1>
         <p class="pt-2 description" style="font-size: 18px">{{ $course->description }}</p>
         <div class="card-course-rating">

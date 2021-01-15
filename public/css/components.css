@@ -176,3 +176,79 @@
     color: #444444 !important;
     font-size: 14px;
 }
+
+.course-list {
+    padding: 48px 24px;
+}
+
+.course-list h1 {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 32px;
+}
+
+.course-list h2 {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 28px;
+}
+
+.course-list .divisor:nth-child(1) {
+    display: none !important;
+}
+
+.course-list .card-course {
+    display: flex;
+    flex-flow: row;
+    width: 100% !important;
+    height: 148px !important;
+}
+
+.course-list .card-course .card-img-top {
+    height: 148px !important;
+    width: 250px;
+}
+
+.course-list .card-course .card-body {
+    width: 100% !important;
+    padding-left: 1rem;
+}
+
+.course-list .card-course h5 {
+    width: 100vw !important;
+    font-size: 16px;
+}
+
+.course-list .card-course p {
+    font-size: 14px;
+    margin: 0 !important;
+    margin-bottom: 4px;
+    padding: 0 !important;
+    font-weight: 400;
+    color: rgb(60, 59, 55);
+}
+
+.course-list .card-course small {
+    font-size: 12px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.course-list .row.card-course {
+    padding: 0;
+    margin: 0;
+    width: 100% !important;
+}
+
+.course-list .row.card-course .card-body {
+    width: 100% !important;
+}
+
+.course-list .card-course .card-course-info {
+    color: rgb(115, 114, 108);
+    font-size: 12px;
+}
+
+.course-list .card-course .card-course-price { display: none; }

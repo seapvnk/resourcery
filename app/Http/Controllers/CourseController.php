@@ -15,4 +15,14 @@ class CourseController extends Controller
             'course' => $course,
         ]);
     }
+
+    public function list(string $category)
+    {
+        $courses = Course::where(['category' => $category])->paginate(16);
+
+        return view('course.list', [
+            'courses' => $courses,
+            'category' => $category,
+        ]);
+    }
 }
