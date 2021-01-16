@@ -20,7 +20,7 @@
         </div>
         
         @isset($isList)
-            <small class="card-course-info">7,5 horas no total ° 130 aulas</small>
+            <small class="card-course-info">7,5 horas no total • 130 aulas</small>
         @endisset
 
         <span class="card-course-price">Gratuito</span>

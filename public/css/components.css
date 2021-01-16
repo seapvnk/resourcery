@@ -252,3 +252,39 @@
 }
 
 .course-list .card-course .card-course-price { display: none; }
+
+.show-container {
+    width: 60vw;
+}
+
+.accordion-button,
+.accordion-button.collapsed {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    color: rgb(60, 59, 55) !important;
+    background-color: rgb(251, 251, 248);
+    border-bottom: none !important;
+}
+
+.course-content h2 {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.2px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: rgb(60, 59, 55) !important;
+    background-color: rgb(251, 251, 248);
+    border-bottom: 1px solid #ccc !important;
+
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: saturate(0);
+}
+
+.curriculum-length {
+    font-size: 14px;
+    color: rgb(33, 37, 41);
+    margin-bottom: 8px;
+}
