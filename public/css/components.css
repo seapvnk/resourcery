@@ -288,3 +288,9 @@
     color: rgb(33, 37, 41);
     margin-bottom: 8px;
 }
+
+
+.course-item {
+    font-size: 14px;
+    color: rgb(60, 59, 55) !important;
+}

@@ -82,14 +82,28 @@
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Accordion Item #1
+                        <button class="accordion-button bold d-flex justify-content-start" style="text-align: left" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <div class="title col">Accordion Item #1</div>
+                            <div class="text-muted px-3" style="font-weight: 400; font-size: 14px">5 aulas  • 25m</div>
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
+                        <div class="accordion-body">
+                            <div class="course-item d-flex mb-3">
+                                <div class="col course-item-text">
+                                    <i class="bi bi-play-circle-fill"></i>
+                                    <span class="mx-3">Lorem, ipsum dolor.</span>
+                                </div>
+                                <div class="text-muted small">03:39</div>
+                            </div>
+                            <div class="course-item d-flex mb-3">
+                                <div class="col course-item-text">
+                                    <i class="bi bi-file-text"></i>
+                                    <span class="mx-3">Lorem, ipsum dolor.</span>
+                                </div>
+                                <div class="text-muted small">00:59</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
