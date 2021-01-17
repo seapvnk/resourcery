@@ -46,9 +46,9 @@
 
                 <p class="bold features-title">Este curso inclui: </p>
                 <div class="features">
-                    <p><i class="bi bi-laptop"></i> 30 horas de vídeo sob demanda</p>
-                    <p><i class="bi bi-file-earmark-arrow-down"></i> 142 recursos para download</p>
-                    <p><i class="bi bi-braces"></i> 14 exercícios práticos</p>
+                    <p><i class="bi bi-laptop"></i> {{ floor($course->totalTime() / 3600) }} horas de vídeo sob demanda</p>
+                    <p><i class="bi bi-file-earmark-arrow-down"></i> {{ $course->countReadings() }} leituras relacionadas</p>
+                    <p><i class="bi bi-braces"></i> Exercícios práticos</p>
                     <p><i class="bi bi-info-circle-fill"></i> Acesso total vitalício</p>
                     <p><i class="bi bi-phone"></i> Acesso no dispositivo móvel e na TV</p>
                 </div>
@@ -75,50 +75,15 @@
             <h2 class="py-4">Conteúdo do curso</h2>
 
             <div class="curriculum-length">
-                33 seções • 549 aulas • Duração total: 126h 14m
+                {{ count($course->sections) != 1? count($course->sections) . ' seções' : count($course->sections) . ' seção'  }} • 
+                {{ $course->totalLessons() != 1? $course->totalLessons() . ' aulas' : $course->totalLessons() . ' aula' }} • 
+                Duração total: {{ $course->totalTimeInBrazilLocale() }}
             </div>
 
-            <div class="accordion" id="accordionExample">
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button bold d-flex justify-content-start" style="text-align: left" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <div class="title col">Accordion Item #1</div>
-                            <div class="text-muted px-3" style="font-weight: 400; font-size: 14px">5 aulas  • 25m</div>
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="course-item d-flex mb-3">
-                                <div class="col course-item-text">
-                                    <i class="bi bi-play-circle-fill"></i>
-                                    <span class="mx-3">Lorem, ipsum dolor.</span>
-                                </div>
-                                <div class="text-muted small">03:39</div>
-                            </div>
-                            <div class="course-item d-flex mb-3">
-                                <div class="col course-item-text">
-                                    <i class="bi bi-file-text"></i>
-                                    <span class="mx-3">Lorem, ipsum dolor.</span>
-                                </div>
-                                <div class="text-muted small">00:59</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button bold" style="border-bottom: 1px solid #ccc !important;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Accordion Item #1
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                    </div>
-                </div>
+            <div class="accordion" id="accordionContentsTable">
+                @foreach($course->sections->sortBy('order') as $section)
+                    @include('course.partials.accordionItem')
+                @endforeach
 
             </div>
 

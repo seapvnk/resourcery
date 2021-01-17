@@ -18,4 +18,40 @@ class Section extends Model
     {
         return $this->hasMany(Content::class);
     }
+
+    public function totalTime()
+    {
+        return $this->contents->reduce(function($total, $current) {
+            return $total + $current->duration;
+        });
+    }
+
+    public function totalTimeInBrazilLocale()
+    {
+
+        $timestamp = $this->totalTime();
+
+        $hours = floor($timestamp / 3600);
+        $minutes = floor($timestamp % 3600 / 60);
+
+        if ($hours == 0) {
+            return "{$minutes}m";
+        }
+
+        return "{$hours}h {$minutes}m";
+    }
+
+    public function countVideoLessons()
+    {
+        return $this->contents()
+            ->where(['type' => 'video'])
+            ->count();
+    }
+
+    public function countReadings()
+    {
+        return $this->contents()
+            ->where(['type' => 'reading'])
+            ->count();
+    }
 }
