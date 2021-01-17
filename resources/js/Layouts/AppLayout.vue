@@ -8,7 +8,12 @@
                         <!-- Logo -->
                         <div class="flex-shrink-0 flex items-center">
                             <a href="/dashboard">
-                                <jet-application-mark class="block h-9 w-auto" />
+                                <a class="navbar-brand text-primary" href="#">
+                                    <div class="logo">
+                                    <span class="logo-icon">R</span>
+                                    Rsrcy
+                                    </div>
+                                </a>
                             </a>
                         </div>
                     </div>

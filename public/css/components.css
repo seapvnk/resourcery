@@ -295,8 +295,47 @@ button[aria-expanded="true"] {
     margin-bottom: 8px;
 }
 
-
 .course-item {
     font-size: 14px;
     color: rgb(60, 59, 55) !important;
+}
+
+.create-course {
+    justify-content: space-between;
+    padding: 25px 50px !important;
+}
+
+.create-course .btn {
+    min-width: 290px;
+    font-size: 15px;
+    padding: 16px 12px;
+    border-radius: 2px;
+    font-weight: 700;
+}
+
+
+.create-course h1 {
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.section-controller-button:hover {
+    background-color: initial !important;
+    color: var(--link-color);
+}
+
+.section-controller-button:focus {
+    background-color: initial !important;
+    color: var(--link-color);
+    box-shadow: none !important;
+}
+
+.section-controller-button.hover-delete:hover {
+    background-color: initial !important;
+    color: tomato;
+}
+
+.section-controller-button.hover-edit:hover {
+    background-color: initial !important;
+    color: orange;
 }

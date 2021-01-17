@@ -9,6 +9,8 @@ class Course extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'cover_picture_path', 'description', 'overview', 'language', 'category'];
+
     public function author()
     {
         return $this->belongsTo(User::class, 'user_id');

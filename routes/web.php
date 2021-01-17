@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\InstructorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,23 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard.index');
 })->name('dashboard');
+
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('instructor/courses', [InstructorController::class, 'index'])
+    ->name('instructor.index');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('course/create', [CourseController::class, 'create'])
+    ->name('course.create');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->post('course/create', [CourseController::class, 'store'])
+    ->name('course.create');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('course/{courseUrl}/create/sections', [CourseController::class, 'createSection'])
+    ->name('section.update');
 
 
 Route::get('course/{course}', [CourseController::class, 'show'])->name('course.show');

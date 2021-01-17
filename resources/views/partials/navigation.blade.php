@@ -20,14 +20,14 @@
             </a>
 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Desenvolvimento e TI</a></li>
-              <li><a class="dropdown-item" href="#">Artes e Design</a></li>
-              <li><a class="dropdown-item" href="#">Negócios e Finanças</a></li>
-              <li><a class="dropdown-item" href="#">Ensino e estudo acadêmico</a></li>
-              <li><a class="dropdown-item" href="#">Desenvolvimento Pessoal</a></li>
-              <li><a class="dropdown-item" href="#">Estilo de vida</a></li>
-              <li><a class="dropdown-item" href="#">Idiomas</a></li>
-              <li><a class="dropdown-item" href="#">Saúde e fitness</a></li>
+              <li><a class="dropdown-item" href="{{ route('course.list', 'Desenvolvimento e TI') }}">Desenvolvimento e TI</a></li>
+              <li><a class="dropdown-item" href="{{ route('course.list', 'Artes e Design') }}">Artes e Design</a></li>
+              <li><a class="dropdown-item" href="{{ route('course.list', 'Negócios e Finanças') }}">Negócios e Finanças</a></li>
+              <li><a class="dropdown-item" href="{{ route('course.list', 'Ensino e estudo acadêmico') }}">Ensino e estudo acadêmico</a></li>
+              <li><a class="dropdown-item" href="{{ route('course.list', 'Desenvolvimento Pessoal') }}">Desenvolvimento Pessoal</a></li>
+              <li><a class="dropdown-item" href="{{ route('course.list', 'Estilo de vida') }}">Estilo de vida</a></li>
+              <li><a class="dropdown-item" href="{{ route('course.list', 'Idiomas') }}">Idiomas</a></li>
+              <li><a class="dropdown-item" href="{{ route('course.list', 'Saúde e fitness') }}">Saúde e fitness</a></li>
             </ul>
           </li>
 
@@ -39,15 +39,16 @@
             <input class="rounded-pill form-control me-2 search-input bg-light" type="search" placeholder="Pesquise qualquer coisa" aria-label="Search">
           </form>
 
-          <li class="nav-item dropdown">
+          <li class="nav-item">
             <a href="#" class="link-secondary text-decoration-none px-4">Converse conosco</a>
           </li>
 
-          <li class="nav-item dropdown">
-            <a href="#" class="link-secondary text-decoration-none px-4">Instrutor</a>
-          </li>
 
           @auth
+              <li class="nav-item">
+                <a href="{{ route('instructor.index') }}" class="link-secondary text-decoration-none px-4">Instrutor</a>
+              </li>
+              
               <li class="nav-item">
                 <a href="{{ url('/dashboard') }}" class="link-secondary text-decoration-none px-3">Meu aprendizado</a>
               </li>
@@ -80,14 +81,14 @@
 
   @auth
     <div class="p-3 px-4 bg-light default-nav-bottom border-top">
-      <a href="" class="link-secondary">Desenvolvimento e TI</a>
-      <a href="" class="link-secondary">Artes e design</a>
-      <a href="" class="link-secondary">Negócios e finanças</a>
-      <a href="" class="link-secondary">Ensino e estudo acadêmico</a>
-      <a href="" class="link-secondary">Desenvolvimento pessoal</a>
-      <a href="" class="link-secondary">Estilo de vida</a>
-      <a href="" class="link-secondary">Idiomas</a>
-      <a href="" class="link-secondary">Saúde e fitness</a>
+      <a href="{{ route('course.list', 'Desenvolvimento e TI') }}" class="link-secondary">Desenvolvimento e TI</a>
+      <a href="{{ route('course.list', 'Artes e design') }}" class="link-secondary">Artes e design</a>
+      <a href="{{ route('course.list', 'Negócios e finanças') }}" class="link-secondary">Negócios e finanças</a>
+      <a href="{{ route('course.list', 'Ensino e estudo acadêmico') }}" class="link-secondary">Ensino e estudo acadêmico</a>
+      <a href="{{ route('course.list', 'Desenvolvimento pessoal') }}" class="link-secondary">Desenvolvimento pessoal</a>
+      <a href="{{ route('course.list', 'Estilo de vida') }}" class="link-secondary">Estilo de vida</a>
+      <a href="{{ route('course.list', 'Idiomas') }}" class="link-secondary">Idiomas</a>
+      <a href="{{ route('course.list', 'Saúde e fitness') }}" class="link-secondary">Saúde e fitness</a>
     </div>
   @endauth
 </div>
