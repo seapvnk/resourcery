@@ -64,10 +64,15 @@
 @section('content')
 
     <div class="container m-4 show-container">
+    
         <div class="container mx-4 p-4 bg-light border rounded">
             <h3>O que você aprenderá</h3>
 
-            <p class="px-4">{{ $course->overview }}</p>
+            <p class="px-4">
+                @foreach(explode("\r\n", $course->overview) as $paragraph)
+                    {{ $paragraph }} <br>
+                @endforeach
+            </p>
         </div>
         
         <div class="container course-content mx-4 pt-4"  style="padding: 0">
