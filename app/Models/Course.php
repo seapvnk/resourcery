@@ -48,6 +48,18 @@ class Course extends Model
         return "{$hours}h {$minutes}m";
     }
 
+    public function totalHours()
+    {
+        $timestamp = $this->totalTime();
+        $hours = floor($timestamp / 3600);
+
+        if ($hours == 1) {
+            return "1 hora";
+        } else {
+            return "$hours horas";
+        }
+    }
+
     public function totalLessons()
     {
         return $this->sections->reduce(function($total, $current) {

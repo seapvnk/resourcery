@@ -20,7 +20,9 @@
         </div>
         
         @isset($isList)
-            <small class="card-course-info">7,5 horas no total • 130 aulas</small>
+            <small class="card-course-info">
+                {{ $course->totalHours() }} horas no total • {{ count($course->sections) }} aulas
+            </small>
         @endisset
 
         <span class="card-course-price">Gratuito</span>
