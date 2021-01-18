@@ -13,6 +13,8 @@
                 <div class="border-bottom mt-1 my-3 divisor"></div>
                 @include('course.partials.card', ['isList' => true])
             @endforeach
+
+            {{ $courses->links() }}
         </div>
     </div>
 

@@ -16,7 +16,7 @@
                     <div class="col">
                         @include('course.partials.card', ['isList' => true])
                     </div>
-                    
+
                     <div class="col">
                         <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Excluir</button>
                         <button class="btn btn-outline-secondary"><i class="bi bi-pencil"></i> Editar</button>
@@ -25,6 +25,8 @@
 
                 <div class="my-2 border-top"></div>
             @endforeach
+
+            {{ $courses->links() }}
         </div>
     </div>
 
