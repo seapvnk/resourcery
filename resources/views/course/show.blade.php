@@ -64,7 +64,7 @@
 @section('content')
 
     <div class="container m-4 show-container">
-    
+
         <div class="container mx-4 p-4 bg-light border rounded">
             <h3>O que você aprenderá</h3>
 
@@ -89,7 +89,6 @@
                 @foreach($course->sections->sortBy('order') as $section)
                     @include('course.partials.accordionItem')
                 @endforeach
-
             </div>
 
         </div>

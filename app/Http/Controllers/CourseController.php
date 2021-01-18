@@ -50,7 +50,7 @@ class CourseController extends Controller
 
         Auth::user()->courses()->save($course);
 
-        return redirect()->route('section.create', ['courseUrl' => $course->url]);
+        return redirect()->route('section.update', ['courseUrl' => $course->url]);
 
     }
 
