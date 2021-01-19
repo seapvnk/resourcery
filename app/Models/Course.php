@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Course extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = ['name', 'cover_picture_path', 'description', 'overview', 'language', 'category'];
 
@@ -72,6 +75,6 @@ class Course extends Model
         return $this->sections->reduce(function($total, $current) {
             return $total + $current->countReadings();
         });
-    }
+    }   
 
 }

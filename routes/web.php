@@ -21,7 +21,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard.index');
 })->name('dashboard');
 
-
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('instructor/courses', [InstructorController::class, 'index'])
     ->name('instructor.index');
@@ -33,6 +32,10 @@ Route::middleware(['auth:sanctum', 'verified'])
 Route::middleware(['auth:sanctum', 'verified'])
     ->post('course/create', [CourseController::class, 'store'])
     ->name('course.create');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->delete('course/delete', [CourseController::class, 'delete'])
+    ->name('course.delete');    
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('course/{courseUrl}/create/sections', [CourseController::class, 'createSection'])

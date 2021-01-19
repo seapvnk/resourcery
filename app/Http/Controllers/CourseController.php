@@ -69,4 +69,16 @@ class CourseController extends Controller
             'course' => $course,
         ]);
     }
+
+    public function delete(Request $request)
+    {
+        $this->validate($request, ['course_id' => 'required']);
+
+        $course = Course::findOrFail($request->course_id);
+        $course->delete();
+
+        session()->flash('message-success', 'Curso deletado com sucesso!');
+
+        return redirect()->route('instructor.index');
+    }
 }

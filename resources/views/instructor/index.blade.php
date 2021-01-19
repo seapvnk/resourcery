@@ -18,7 +18,25 @@
                     </div>
 
                     <div class="col">
-                        <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Excluir</button>
+                        <form
+                            class="invisible"
+                            action="{{ route('course.delete') }}" 
+                            delete-form="{{ $course->id }}"
+                            method="POST"
+                            id="course-delete-{{ $course->id }}"
+                        >
+                            @method('delete')
+                            @csrf
+                            <input type="text" name="course_id" value="{{ $course->id }}">
+                        </form>
+
+                        <button 
+                            class="btn btn-outline-danger btn-delete-course" 
+                            course-id="{{ $course->id }}"
+                        >
+                            <i class="bi bi-trash"></i> Excluir
+                        </button>
+
                         <button class="btn btn-outline-secondary"><i class="bi bi-pencil"></i> Editar</button>
                     </div>
                 </div>
