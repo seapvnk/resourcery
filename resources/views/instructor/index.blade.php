@@ -37,7 +37,7 @@
                             <i class="bi bi-trash"></i> Excluir
                         </button>
 
-                        <button class="btn btn-outline-secondary"><i class="bi bi-pencil"></i> Editar</button>
+                        <a href="{{ route('section.update', ['courseUrl' => $course->url]) }}" class="btn btn-outline-secondary"><i class="bi bi-pencil"></i> Editar</a>
                     </div>
                 </div>
 
