@@ -5,17 +5,21 @@
 @section('content')
 
     <div class="course-list">
-        <h1>Cursos de {{ $category }}</h1>
-        <h2>Todos os cursos em {{ $category }}</h2>
+        @if ($courses->isNotEmpty())
+            <h1>Cursos de {{ $category }}</h1>
+            <h2>Todos os cursos em {{ $category }}</h2>
 
-        <div class="courses-container">
-            @foreach($courses as $course)
-                <div class="border-bottom mt-1 my-3 divisor"></div>
-                @include('course.partials.card', ['isList' => true])
-            @endforeach
+            <div class="courses-container">
+                @foreach($courses as $course)
+                    <div class="border-bottom mt-1 my-3 divisor"></div>
+                    @include('course.partials.card', ['isList' => true])
+                @endforeach
 
-            {{ $courses->links() }}
-        </div>
+                {{ $courses->links() }}
+            </div>
+        @else
+            <h1>Nenhum curso encontrado nesses critérios</h1>
+        @endif
     </div>
 
 @endsection
