@@ -43,4 +43,6 @@ Route::middleware(['auth:sanctum', 'verified'])
 
 
 Route::get('course/{course}', [CourseController::class, 'show'])->name('course.show');
+
+Route::get('courses/', [CourseController::class, 'index'])->name('course.index');
 Route::get('courses/{category}', [CourseController::class, 'list'])->name('course.list');

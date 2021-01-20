@@ -31,12 +31,12 @@
             </ul>
           </li>
 
-          <form class="d-flex">
+          <form class="d-flex" method="GET" action="{{ route('course.list', $category ?? '') }}">
             <button class="btn rounded-circle search-button d-flex justify-content-center" type="submit">
               <i class="bi bi-search"></i>
             </button>
             
-            <input class="rounded-pill form-control me-2 search-input bg-light" type="search" placeholder="Pesquise qualquer coisa" aria-label="Search">
+            <input class="rounded-pill form-control me-2 search-input bg-light" required name="q" type="search" placeholder="Pesquise qualquer coisa" aria-label="Search">
           </form>
 
           <li class="nav-item">

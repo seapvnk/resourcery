@@ -9,6 +9,22 @@ use App\Models\Course;
 
 class CourseController extends Controller
 {
+    public function index(Request $request)
+    {
+        $search = $request->query('q', false);
+
+        if ($search) {
+            $courses = Course::where('name', 'like', "%{$search}%")->paginate(16);
+        } else {
+            return redirect()->route('home');
+        }
+
+        return view('course.list', [
+            'courses' => $courses,
+            'category' => '',
+        ]);
+    }
+
     public function show(string $course)
     {
         $course = Course::where(['url' => $course])->first();
@@ -18,9 +34,17 @@ class CourseController extends Controller
         ]);
     }
 
-    public function list(string $category)
+    public function list(Request $request, string $category)
     {
-        $courses = Course::where(['category' => $category])->paginate(16);
+        $search = $request->query('q', false);
+
+        if ($search) {
+            $courses = Course::where(['category' => $category])
+                ->where('name', 'like', "%{$search}%")
+                ->paginate(16);
+        } else {
+            $courses = Course::where(['category' => $category])->paginate(16);
+        }
 
         return view('course.list', [
             'courses' => $courses,
