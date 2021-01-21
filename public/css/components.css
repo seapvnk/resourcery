@@ -395,11 +395,14 @@ button[aria-expanded="true"] {
     opacity: .4 !important;
 }
 
-.pagination .active {
-    
+.btn-blue {
+    background-color: #1c6a78 !important;
+    border-color: #1c6a78 !important;
+    color: #fff;
 }
 
-.page-item:first-child .page-link:hover,
-.page-item:last-child .page-link:hover {
-
+.btn-blue:hover {
+    background-color: #094c59 !important;
+    border-color: #094c59 !important;
+    color: #fff;
 }

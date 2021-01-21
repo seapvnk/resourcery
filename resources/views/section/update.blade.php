@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{ route('course.create') }}" method="POST" class="default-form p-4">
+<form action="#" method="POST" class="default-form p-4">
         @csrf
         <strong>Editar seções do curso *{{ $course->name }}</strong>
 
@@ -17,12 +17,18 @@
             </div>
         @endif
 
-        <div class="form-group d-flex">
+        @foreach ($course->sections as $section)
+            @include('section.partials.sectionEdit')
+        @endforeach
+        
+        <div class="form-group d-flex course-section">
+
+
             <span>
                 <i class="bi bi-file-text"></i>
             </span>
 
-            <input type="text" id="section-1" name="section" class="form-control" placeholder="Seção 1" required>
+            <input type="text" name="section" class="form-control" placeholder="Nova seção" required>
 
             <div class="btn-control d-flex flex-column">
                 <button class="btn btn-outline-secondary section-controller-button p-0 border-0" style="border-radius: 0"><i class="bi bi-arrow-up"></i></button>
@@ -36,7 +42,7 @@
 
         </div>
 
-        <input type="submit" value="Próximo" class="btn btn-control btn-red btn-lg mb-2">
+        <input type="submit" value="Criar seção" class="btn btn-control btn-red btn-lg mb-2">
 
     </form>
 

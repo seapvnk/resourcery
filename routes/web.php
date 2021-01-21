@@ -40,6 +40,11 @@ Route::middleware(['auth:sanctum', 'verified'])
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('course/{courseUrl}/create/sections', [CourseController::class, 'createSection'])
     ->name('section.update');
+    
+Route::middleware(['auth:sanctum', 'verified'])
+    ->post('course/{courseUrl}/create/sections', [CourseController::class, 'createSection'])
+    ->name('section.update');
+
 
 
 Route::get('course/{course}', [CourseController::class, 'show'])->name('course.show');
