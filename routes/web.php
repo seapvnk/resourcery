@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\InstructorController;
+use App\Http\Controllers\SectionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,12 +39,13 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->name('course.delete');    
 
 Route::middleware(['auth:sanctum', 'verified'])
-    ->get('course/{courseUrl}/create/sections', [CourseController::class, 'createSection'])
+    ->get('course/{courseUrl}/create/sections', [SectionController::class, 'create'])
     ->name('section.update');
     
 Route::middleware(['auth:sanctum', 'verified'])
-    ->post('course/{courseUrl}/create/sections', [CourseController::class, 'createSection'])
+    ->post('course/{courseUrl}/create/sections', [SectionController::class, 'create'])
     ->name('section.update');
+    
 
 
 
