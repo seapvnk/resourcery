@@ -21,7 +21,7 @@
         
         @isset($isList)
             <small class="card-course-info">
-                {{ $course->totalHours() }} horas no total • {{ count($course->sections) }} aulas
+                {{ $course->totalHours() }} horas no total • {{ $course->totalLessons() }} aulas
             </small>
         @endisset
 
