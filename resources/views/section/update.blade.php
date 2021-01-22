@@ -2,6 +2,17 @@
 
 @section('content')
 
+<div class="invisible">
+
+    @foreach ($course->sections as $section)
+        <form method="POST" class="invisible d-none" id="section-delete-{{ $section->id }}" action="{{ route('section.delete', ['courseUrl' => $section->course->url]) }}">
+            @csrf
+            @method('delete')
+            <input type="hidden" name="section_id" value="{{ $section->id }}">
+        </form>
+    @endforeach
+</div>
+
 <form action="#" method="POST" class="default-form p-4">
         @csrf
         <strong>Editar seções do curso *{{ $course->name }}</strong>

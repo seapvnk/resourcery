@@ -15,4 +15,19 @@ Zepto(() => {
         })
     })
 
+    $('.btn-delete-section').click(function(e) {
+      e.preventDefault();
+
+      Swal.fire({
+          title: 'Deseja mesmo excluir essa seção?',
+          showCancelButton: true,
+          confirmButtonText: `Excluir`,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire('Excluindo seção!', '', 'success')
+            $(`#section-delete-${$(this).attr('section-id')}`).submit()
+          }
+      })
+  })
+
 })

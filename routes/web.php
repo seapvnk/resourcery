@@ -46,9 +46,11 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->post('course/{courseUrl}/create/sections', [SectionController::class, 'create'])
     ->name('section.update');
     
-
-
-
+Route::middleware(['auth:sanctum', 'verified'])
+    ->delete('course/{courseUrl}/delete/section', [SectionController::class, 'delete'])
+    ->name('section.delete'); 
+    
+    
 Route::get('course/{course}', [CourseController::class, 'show'])->name('course.show');
 
 Route::get('courses/', [CourseController::class, 'index'])->name('course.index');
