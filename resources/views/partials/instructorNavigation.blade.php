@@ -21,6 +21,9 @@
             </li>
         </ul>
         
+        <a href="javascript: window.history.back()"><i class="bi bi-arrow-left"></i></a>
+        <div class="clearfix"></div>
+        
       </div>
     </div>
   </nav>
