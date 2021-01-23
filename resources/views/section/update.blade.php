@@ -13,7 +13,7 @@
     @endforeach
 </div>
 
-<form action="{{ route('section.save') }}" method="POST" class="default-form p-4">
+<form action="#" method="POST" class="default-form p-4">
         @csrf
         <strong>Editar seções do curso *{{ $course->name }}</strong>
 
