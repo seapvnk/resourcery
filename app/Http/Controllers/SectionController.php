@@ -71,4 +71,38 @@ class SectionController extends Controller
         return redirect()->back();
     }
 
+    public function orderUpdate(Request $request, string $method, int $section)
+    {
+
+        $courseSection = Section::find($section);
+        if (!$courseSection->course->user_id == Auth::user()->id) {
+            return redirect()->back();
+        }
+
+        $sections = $courseSection->course->sections->sortBy('order');
+
+        if ($method == 'up') {
+            $nextIndex = $sections->reverse()->search(function ($item, $key) use ($method, $courseSection) {
+                return $item->order < $courseSection->order;
+            });
+        } else {
+            $nextIndex = $sections->search(function ($item, $key) use ($method, $courseSection) {
+                return $item->order > $courseSection->order;
+            });
+        }
+
+        if ($nextIndex) {
+            $nextSection = $sections[$nextIndex];
+
+            $temp = $courseSection->order;
+            $courseSection->order = $nextSection->order;
+            $nextSection->order = $temp;
+
+            $courseSection->save();
+            $nextSection->save();
+        }
+
+        return redirect()->back();
+    }
+
 }
