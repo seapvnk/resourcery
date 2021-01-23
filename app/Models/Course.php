@@ -75,6 +75,6 @@ class Course extends Model
         return $this->sections->reduce(function($total, $current) {
             return $total + $current->countReadings();
         });
-    }   
+    }
 
 }

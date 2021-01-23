@@ -48,8 +48,11 @@ Route::middleware(['auth:sanctum', 'verified'])
     
 Route::middleware(['auth:sanctum', 'verified'])
     ->delete('course/{courseUrl}/delete/section', [SectionController::class, 'delete'])
-    ->name('section.delete'); 
-    
+    ->name('section.delete');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('section/order/{method}/{section}', [SectionController::class, 'orderUpdate'])
+    ->name('section.order');
     
 Route::get('course/{course}', [CourseController::class, 'show'])->name('course.show');
 
