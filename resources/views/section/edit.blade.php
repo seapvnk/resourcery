@@ -5,7 +5,7 @@
 <div class="invisible">
 
     @foreach ($section->contents as $content)
-        <form method="POST" class="invisible d-none" id="content-delete-{{ $content->id }}" action="{{ route('content.delete', ['courseUrl' => $content->course->url]) }}">
+        <form method="POST" class="invisible d-none" id="content-delete-{{ $content->id }}" action="{{ route('content.delete', ['courseUrl' => $section->course->url]) }}">
             @csrf
             @method('delete')
             <input type="hidden" name="content_id" value="{{ $content->id }}">

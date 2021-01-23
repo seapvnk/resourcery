@@ -8,8 +8,8 @@
         type="text" 
         class="form-control" 
         disabled 
-        placeholder="{{ $section->name }}" 
-        value="{{ $section->name }}"
+        placeholder="{{ $content->name }}" 
+        value="{{ $content->name }}"
     >
 
     <div class="btn-control d-flex flex-column">

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\SectionController;
+use App\Http\Controllers\ContentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,9 +64,17 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->name('section.order');
 
 Route::middleware(['auth:sanctum', 'verified'])
-    ->get('content/create/{section}/', [SectionController::class, 'orderUpdate'])
+    ->get('content/create/{section}/', [ContentController::class, 'create'])
     ->name('content.create');
-    
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->post('content/create', [ContentController::class, 'save'])
+    ->name('content.save');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->delete('content/delete', [ContentController::class, 'delete'])
+    ->name('content.delete');
+
 
 Route::get('course/{course}', [CourseController::class, 'show'])->name('course.show');
 
