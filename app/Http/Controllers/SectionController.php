@@ -71,6 +71,39 @@ class SectionController extends Controller
         return redirect()->back();
     }
 
+    public function edit(Request $request, string $courseUrl, int $section)
+    {
+        $course = Course::where(['url' => $courseUrl])->first();
+        $courseSection = Section::findOrFail($section);
+
+        if ($course->user_id != Auth::user()->id) {
+            return redirect()->back();
+        }
+
+        return view('section.edit', [
+            'course' => $course,
+            'section' => $courseSection,
+        ]);
+        
+    }
+
+    public function save(Request $request)
+    {
+        $this->validate($request, [
+            'section_id' => 'required',
+            'name' => 'required|min:3|max:255',
+        ]);
+
+        $section = Section::findOrFail($request->section_id);
+        $section->name = $request->name;
+
+        if ($section->course->user_id == Auth::user()->id) {
+            $section->save();
+        }
+        
+        return redirect()->back(); 
+    }
+
     public function orderUpdate(Request $request, string $method, int $section)
     {
 
@@ -82,11 +115,11 @@ class SectionController extends Controller
         $sections = $courseSection->course->sections->sortBy('order');
 
         if ($method == 'up') {
-            $nextIndex = $sections->reverse()->search(function ($item, $key) use ($method, $courseSection) {
+            $nextIndex = $sections->reverse()->search(function ($item, $key) use ($courseSection) {
                 return $item->order < $courseSection->order;
             });
         } else {
-            $nextIndex = $sections->search(function ($item, $key) use ($method, $courseSection) {
+            $nextIndex = $sections->search(function ($item, $key) use ($courseSection) {
                 return $item->order > $courseSection->order;
             });
         }

@@ -13,7 +13,7 @@
     @endforeach
 </div>
 
-<form action="#" method="POST" class="default-form p-4">
+<form action="{{ route('section.save') }}" method="POST" class="default-form p-4">
         @csrf
         <strong>Editar seções do curso *{{ $course->name }}</strong>
 
@@ -33,7 +33,6 @@
         @endforeach
         
         <div class="form-group d-flex course-section">
-
 
             <span>
                 <i class="bi bi-file-text"></i>
