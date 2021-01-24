@@ -13,6 +13,6 @@ class Content extends Model
 
     public function section()
     {
-        $this->belongsTo(Section::class);
+        return $this->belongsTo(Section::class);
     }
 }

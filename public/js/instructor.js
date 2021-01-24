@@ -28,6 +28,23 @@ Zepto(() => {
             $(`#section-delete-${$(this).attr('section-id')}`).submit()
           }
       })
+      
+  })
+  
+  $('.btn-delete-content').click(function(e) {
+      e.preventDefault();
+
+      Swal.fire({
+          title: 'Deseja mesmo excluir esse conteúdo?',
+          showCancelButton: true,
+          confirmButtonText: `Excluir`,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire('Excluindo conteúdo!', '', 'success')
+            $(`#content-delete-${$(this).attr('content-id')}`).submit()
+          }
+      })
+      
   })
 
 })

@@ -31,8 +31,8 @@
     
     <div class="btn-control d-flex flex-column">
         <button 
-            section-id="{{ $section->id }}" 
-            class="btn-delete-section btn btn-outline-secondary 
+            content-id="{{ $content->id }}" 
+            class="btn-delete-content btn btn-outline-secondary 
                     section-controller-button p-0 border-0 hover-delete" 
             style="border-radius: 0"
         >

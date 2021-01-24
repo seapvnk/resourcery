@@ -60,6 +60,12 @@ class ContentController extends Controller
 
     public function delete(Request $request)
     {
-        return view('welcome');
+        $content = Content::find($request->content_id);
+
+        if ($content->section->course->user_id == Auth::user()->id) {
+            $content->delete();
+        }
+        
+        return redirect()->back();
     }
 }
