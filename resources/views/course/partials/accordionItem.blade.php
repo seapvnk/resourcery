@@ -19,7 +19,13 @@
                         @else
                             <i class="bi bi-file-text"></i>
                         @endif
+
+                        @isset($lecture)<a href="{{ route('course.learn', ['course' => $course->url, 'lecture' => $content->id]) }}">@endisset
+                        
                         <span class="mx-3">{{ $content->name }}</span>
+                        
+                        @isset($lecture)</a>@endisset
+
                     </div>
 
                     @if (date('H', $content->duration) == 0)

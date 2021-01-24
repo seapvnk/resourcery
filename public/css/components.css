@@ -406,3 +406,41 @@ button[aria-expanded="true"] {
     border-color: #094c59 !important;
     color: #fff;
 }
+
+body.lecture {
+    display: grid;
+    grid-template-columns: 1fr 25vw;
+    grid-template-rows: 76px 1fr 1fr;
+    grid-template-areas: "nav nav"
+                         "lecture sidebar"
+                         "footer sidebar";
+}
+
+body.lecture .res-nav {
+    grid-area: nav;
+}
+
+body.lecture .res-footer {
+    grid-area: footer;
+}
+
+body.lecture .res-aside {
+    grid-area: sidebar;
+    border-left: 1px solid #ccc;
+    overflow: scroll !important;
+}
+
+body.lecture .res-aside * {
+    border-left: none !important;
+    border-radius: 0 !important;
+}
+
+body.lecture .res-lecture {
+    grid-area: lecture;
+}
+
+body.lecture .res-lecture .container {
+    width: 70%;
+    margin: auto;
+    margin-top: 2rem;
+}

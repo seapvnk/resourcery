@@ -40,7 +40,7 @@
                 <h5 class="card-title h2 bold">R$ 0,00 <sup>R$ 0,00</sup></h5>
                 <p>Curso gratuito</p>
                 <p class="price"><i class="bi bi-alarm"></i> Só mais 100 dias por este preço!</p>
-                <button class="btn btn-red form-control bold">Acessar agora</button>
+                <button onclick="window.location = '{{ route('course.learn', ['course' => $course->url]) }}'" class="btn btn-red form-control bold">Acessar agora</button>
                 <button class="btn btn-wish form-control bold">Adicionar a lista</button>
                 <small>Não precisa cadastrar cartão de crédito</small>
 

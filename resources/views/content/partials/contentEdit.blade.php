@@ -1,5 +1,3 @@
-{{ $content->order }}
-
 <div class="form-group d-flex course-section">
 
     <span>

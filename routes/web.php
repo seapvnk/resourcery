@@ -6,6 +6,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\LearnController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -88,6 +89,7 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->name('content.order');
 
 Route::get('course/{course}', [CourseController::class, 'show'])->name('course.show');
+Route::get('course/{course}/learn/{lecture?}', [LearnController::class, 'index'])->name('course.learn');
 
 Route::get('courses/', [CourseController::class, 'index'])->name('course.index');
 Route::get('courses/{category}', [CourseController::class, 'list'])->name('course.list');
