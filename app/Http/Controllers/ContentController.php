@@ -12,13 +12,13 @@ class ContentController extends Controller
 {
     public function create(Request $request, string $section)
     {
-        $courseSection = Section::findOrFail($section);
-        if ($courseSection->course->user_id != Auth::user()->id) {
+        $courseContent = Section::findOrFail($section);
+        if ($courseContent->course->user_id != Auth::user()->id) {
             return redirect()->back();
         }
 
         return view('content.create', [
-            'section' => $courseSection,
+            'section' => $courseContent,
         ]);
     }
 
@@ -61,11 +61,87 @@ class ContentController extends Controller
     public function delete(Request $request)
     {
         $content = Content::find($request->content_id);
+        $contentOrder = $content->order;
 
         if ($content->section->course->user_id == Auth::user()->id) {
             $content->delete();
         }
+
+        foreach($content->section->contents as $currentContent) {
+            if ($contentOrder < $currentContent->order) {
+                $currentContent->order--;
+                $currentContent->save(); 
+            }
+        }
         
         return redirect()->back();
     }
+
+    public function edit(Request $request, string $courseUrl, string $section, string $content)
+    {
+        $content = Content::where([
+            'section_id' => $section, 
+            'id' => $content
+        ])->get()->first();
+
+        return view('content.edit', [
+            'content' => $content,
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        $this->validate($request, [
+            'content_id' => 'required',
+        ]);
+
+        $content = Content::findOrFail($request->content_id);
+
+        if ($content->section->course->user_id == Auth::user()->id) {
+            $content->fill($request->all());
+
+            if ($request->duration) {
+                $time = explode(":", $request->duration);
+                $content->duration = mktime((int) $time[0], (int) $time[1], 0, 1, 1, 1970);
+            }
+
+            $content->save();
+        }
+        
+        return redirect()->back(); 
+    }
+
+    public function orderUpdate(Request $request, string $method, int $content)
+    {
+
+        $courseContent = Content::find($content);
+        if (!$courseContent->section->course->user_id == Auth::user()->id) {
+            return redirect()->back();
+        }
+
+        $contents = $courseContent->section->contents->sortBy('order');
+
+        if ($method == 'up') {
+            $nextIndex = $contents->reverse()->search(function ($item, $key) use ($courseContent) {
+                return $item->order < $courseContent->order;
+            });
+        } else {
+            $nextIndex = $contents->search(function ($item, $key) use ($courseContent) {
+                return $item->order > $courseContent->order;
+            });
+        }
+
+        if ($nextIndex) {
+            $nextContent = $contents[$nextIndex];
+
+            $temp = $courseContent->order;
+            $courseContent->order = $nextContent->order;
+            $nextContent->order = $temp;
+
+            $courseContent->save();
+            $nextContent->save();
+        }
+
+        return redirect()->back();
+    }   
 }

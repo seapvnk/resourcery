@@ -1,3 +1,5 @@
+{{ $content->order }}
+
 <div class="form-group d-flex course-section">
 
     <span>
@@ -14,7 +16,7 @@
 
     <div class="btn-control d-flex flex-column">
         <a
-            href="{{ route('section.order', ['method' => 'up', 'section' => $section->id]) }}"
+            href="{{ route('content.order', ['method' => 'up', 'content' => $content->id]) }}"
             class="btn btn-outline-secondary section-controller-button p-0 border-0" 
             style="border-radius: 0"
         >
@@ -22,7 +24,7 @@
         </a>
         
         <a 
-            href="{{ route('section.order', ['method' => 'down', 'section' => $section->id]) }}"
+            href="{{ route('content.order', ['method' => 'down', 'content' => $content->id]) }}"
             class="btn btn-outline-secondary section-controller-button p-0 border-0" 
             style="border-radius: 0">
             <i class="bi bi-arrow-down"></i>
@@ -40,7 +42,7 @@
         </button>
 
         <a
-            href="{{ route('section.edit', ['courseUrl' => $course->url, 'section' => $section->id]) }}" 
+            href="{{ route('content.edit', ['courseUrl' => $course->url, 'section' => $section->id, 'content' => $content->id]) }}" 
             class="btn btn-outline-secondary section-controller-button p-0 border-0 hover-edit" 
             style="border-radius: 0"
         >
@@ -50,4 +52,3 @@
     </div>
 
 </div>
-

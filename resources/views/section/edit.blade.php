@@ -21,6 +21,16 @@
     </strong>
 
     <div class="border-top my-3"></div>
+
+    @if ($errors->any())
+        <div class="alert alert-danger" style="text-align: left">
+            Erros ao salvar alterações: <br>
+            @foreach ($errors->all() as $error)
+                <small>{{ $error }}</small> <br>
+            @endforeach
+        </div>
+    @endif
+
     <div class="form-group d-flex course-content">
 
         <span>
@@ -33,15 +43,6 @@
     </div>
 
     <input type="submit" value="Atualizar seção" class="btn btn-control btn-blue btn-lg mb-2">
-
-    @if ($errors->any())
-        <div class="alert alert-danger" style="text-align: left">
-            Erros ao salvar alterações: <br>
-            @foreach ($errors->all() as $error)
-                <small>{{ $error }}</small> <br>
-            @endforeach
-        </div>
-    @endif
 
     @foreach ($section->contents->sortBy('order') as $content)
         @include('content.partials.contentEdit')

@@ -75,6 +75,17 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->delete('content/delete', [ContentController::class, 'delete'])
     ->name('content.delete');
 
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('content/edit/{courseUrl}/{section}/{content}', [ContentController::class, 'edit'])
+    ->name('content.edit');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->post('content/save', [ContentController::class, 'update'])
+    ->name('content.update');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('content/order/{method}/{content}', [ContentController::class, 'orderUpdate'])
+    ->name('content.order');
 
 Route::get('course/{course}', [CourseController::class, 'show'])->name('course.show');
 
