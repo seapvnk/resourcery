@@ -63,4 +63,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Course::class, 'user_id');
     }
+
+    public function favorites()
+    {
+        return $this->belongsToMany(Course::class, 'favorites');
+    }
 }
