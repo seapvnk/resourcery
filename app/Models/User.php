@@ -68,4 +68,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Course::class, 'favorites');
     }
+
+    public function hasFavorite(int $courseId)
+    {
+        return $this->favorites()->where(['course_id' => $courseId])->get()->first();
+    }
 }

@@ -28,7 +28,7 @@
             <i class="mx-2 bi bi-globe2"></i> {{ $course->language }}
         </p>
 
-        <button class="mt-2 btn btn-outline-light">Wishlist <i class="bi bi-heart"></i></button>
+        <a href="{{ route('course.favorite', ['course' => $course->url]) }}" class="mt-2 btn btn-outline-light">Wishlist <i class="bi bi-heart"></i></a>
         <button class="mt-2 btn btn-outline-light">Compartilhar <i class="bi bi-share"></i></button>
 
     </div>
@@ -40,8 +40,15 @@
                 <h5 class="card-title h2 bold">R$ 0,00 <sup>R$ 0,00</sup></h5>
                 <p>Curso gratuito</p>
                 <p class="price"><i class="bi bi-alarm"></i> Só mais 100 dias por este preço!</p>
+                
                 <button onclick="window.location = '{{ route('course.learn', ['course' => $course->url]) }}'" class="btn btn-red form-control bold">Acessar agora</button>
-                <button class="btn btn-wish form-control bold">Adicionar a lista</button>
+                <button 
+                    onclick="window.location = '{{ route(!Auth::user()->hasFavorite($course->id)? 'course.favorite' : 'course.removeFavorite', ['course' => $course->url]) }}'" 
+                    class="btn btn-wish form-control bold"
+                >
+                    {{  !Auth::user()->hasFavorite($course->id)? 'Adicionar a lista' : 'Remover da lista' }}
+                </button>
+           
                 <small>Não precisa cadastrar cartão de crédito</small>
 
                 <p class="bold features-title">Este curso inclui: </p>

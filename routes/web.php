@@ -94,3 +94,10 @@ Route::get('course/{course}/learn/{lecture?}', [LearnController::class, 'index']
 Route::get('courses/', [CourseController::class, 'index'])->name('course.index');
 Route::get('courses/{category}', [CourseController::class, 'list'])->name('course.list');
 
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('course/favorite/{course}', [LearnController::class, 'favorite'])
+    ->name('course.favorite');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('course/removeFavorite/{course}', [LearnController::class, 'removeFavorite'])
+    ->name('course.removeFavorite');
