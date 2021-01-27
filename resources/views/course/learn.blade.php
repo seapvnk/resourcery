@@ -7,7 +7,26 @@
     @include('partials.navigationLearn')
 
     <div class="res-lecture">
-        @include('course.partials.embed', ['video' => $content->content])
+        
+        @if ($content->type == 'video')
+            @include('course.partials.embed', ['video' => $content->content])
+        @else
+            <div class="container border mb-4 shadow-sm p-4" >
+                <div class="mb-4"></div>
+
+                <h3 class="h1"><i class="bi bi-file-text"></i>{{ $content->name }}</h2>
+                <a 
+                    href="{{ $content->content }}" class="link-default text-center"
+                    style="font-size: 24px; width: 100%; text-decoration: none"
+                >
+                    <i class="bi bi-link"></i> {{ $content->content }}
+                </a>
+
+                <div class="mb-4"></div>
+            </div>
+
+            <div class="border-bottom"></div>
+        @endif
 
         <div class="container px-4 py-2">
             <h3 class="bold">Sobre este curso</h3>
