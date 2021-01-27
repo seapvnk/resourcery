@@ -42,12 +42,14 @@
                 <p class="price"><i class="bi bi-alarm"></i> Só mais 100 dias por este preço!</p>
                 
                 <button onclick="window.location = '{{ route('course.learn', ['course' => $course->url]) }}'" class="btn btn-red form-control bold">Acessar agora</button>
-                <button 
-                    onclick="window.location = '{{ route(!Auth::user()->hasFavorite($course->id)? 'course.favorite' : 'course.removeFavorite', ['course' => $course->url]) }}'" 
-                    class="btn btn-wish form-control bold"
-                >
-                    {{  !Auth::user()->hasFavorite($course->id)? 'Adicionar a lista' : 'Remover da lista' }}
-                </button>
+                @auth
+                    <button 
+                        onclick="window.location = '{{ route(!Auth::user()->hasFavorite($course->id)? 'course.favorite' : 'course.removeFavorite', ['course' => $course->url]) }}'" 
+                        class="btn btn-wish form-control bold"
+                    >
+                        {{  !Auth::user()->hasFavorite($course->id)? 'Adicionar a lista' : 'Remover da lista' }}
+                    </button>
+                @endauth
            
                 <small>Não precisa cadastrar cartão de crédito</small>
 
