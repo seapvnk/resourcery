@@ -11,11 +11,11 @@
 @section('content')
 
     <div class="container">
-        <div class="p-3">
+        <div class="p-2">
 
             <div class="row">
                 @foreach ($courses as $course)
-                    @include('course.partials.card')
+                    @include('course.partials.card', ['dashboard' => true])
                 @endforeach
             </div>
 

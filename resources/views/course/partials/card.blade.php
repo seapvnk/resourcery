@@ -1,5 +1,13 @@
 
-<div class="{{ isset($isList)? 'row' : 'card' }} card-course" onclick="window.location = '{{ route('course.show', ['course' => $course->url]) }}'">
+<div 
+    class="{{ isset($isList)? 'row' : 'card' }} card-course"
+    
+    @isset($dashboard) 
+        onclick="window.location = '{{ route('course.learn', ['course' => $course->url]) }}'"
+    @else
+        onclick="window.location = '{{ route('course.show', ['course' => $course->url]) }}'"
+    @endisset
+>
     <img src="{{ $course->cover_picture_path }}" class="card-img-top" alt="...">
     <div class="card-body">
         <h5 class="card-title">{{ $course->name }}</h5>

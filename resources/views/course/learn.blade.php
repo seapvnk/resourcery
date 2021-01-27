@@ -16,6 +16,7 @@
 
                 <h3 class="h1"><i class="bi bi-file-text"></i>{{ $content->name }}</h2>
                 <a 
+                    target="_blank"
                     href="{{ $content->content }}" class="link-default text-center"
                     style="font-size: 24px; width: 100%; text-decoration: none"
                 >
