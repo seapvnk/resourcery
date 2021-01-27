@@ -36,7 +36,7 @@
     <div class="col">
         <div class="card card-course-info text-dark shadow-sm">
             <img src="{{ $course->cover_picture_path }}" class="card-img-top" alt="..." style="background: #ccc">
-            <div class="card-body px-4">
+            <div class="card-body px-4" style="z-index: 9999">
                 <h5 class="card-title h2 bold">R$ 0,00 <sup>R$ 0,00</sup></h5>
                 <p>Curso gratuito</p>
                 <p class="price"><i class="bi bi-alarm"></i> Só mais 100 dias por este preço!</p>
