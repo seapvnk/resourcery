@@ -52,4 +52,13 @@ class LearnController extends Controller
         return redirect()->back();
     }
 
+    public function dashboard()
+    {
+        $courses = Auth::user()->favorites()->paginate(12);
+        
+        return view('dashboard.index', [
+            'courses' => $courses,
+        ]);
+    }
+
 }

@@ -20,9 +20,9 @@ use App\Http\Controllers\LearnController;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard.index');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('dashboard', [LearnController::class, 'dashboard'])
+    ->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('instructor/courses', [InstructorController::class, 'index'])
