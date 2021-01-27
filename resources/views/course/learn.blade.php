@@ -55,3 +55,19 @@
 
 @endsection
 
+<script>
+
+    const markAsDid = id => {
+        $.ajax({
+            url: '{{ url('content/todo') }}',
+            data: {
+                content_id: id,
+            },
+            type: "POST",
+            headers: {
+                'X-CSRF-Token': '{{ csrf_token() }}',
+            },
+        }); 
+    }
+
+</script>

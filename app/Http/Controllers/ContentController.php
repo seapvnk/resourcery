@@ -143,5 +143,29 @@ class ContentController extends Controller
         }
 
         return redirect()->back();
-    }   
+    }
+
+    public function todo(Request $request)
+    {
+        $this->validate($request, [
+            'content_id' => 'required',
+        ]);
+
+        $content = Auth::user()
+            ->lessionsDid()
+            ->where([
+                'content_id' => $request->content_id
+        ])->get()
+        ->first();
+
+
+        if (!$content) {
+            $content = Content::findOrFail($request->content_id);
+            Auth::user()->lessionsDid()->syncWithoutDetaching($content);
+        } else {
+            Auth::user()->lessionsDid()->detach($content);
+        }
+
+        return response('ok', 200);
+    }
 }

@@ -14,11 +14,23 @@
                 <div class="course-item d-flex mb-3">
                     
                     <div class="col course-item-text">
-                        @if ($content->type == 'video')
-                            <i class="bi bi-play-circle-fill"></i>
+                        @isset($lecture)
+                            <input 
+                                style="border: 1px solid #ccc !important" 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                value="" 
+                                id="flexCheckDefault"
+                                {{ Auth::user()->didThisLession($content->id)? 'checked' : '' }}
+                                onclick="markAsDid('{{ $content->id }}')"
+                            >
                         @else
-                            <i class="bi bi-file-text"></i>
-                        @endif
+                            @if ($content->type == 'video')
+                                <i class="bi bi-play-circle-fill"></i>
+                            @else
+                                <i class="bi bi-file-text"></i>
+                            @endif
+                        @endisset
 
                         @isset($lecture)<a href="{{ route('course.learn', ['course' => $course->url, 'lecture' => $content->id]) }}">@endisset
                         

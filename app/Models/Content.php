@@ -15,4 +15,9 @@ class Content extends Model
     {
         return $this->belongsTo(Section::class);
     }
+
+    public function did()
+    {
+        return $this->belongsToMany(User::class, 'todos');
+    }
 }

@@ -101,3 +101,7 @@ Route::middleware(['auth:sanctum', 'verified'])
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('course/removeFavorite/{course}', [LearnController::class, 'removeFavorite'])
     ->name('course.removeFavorite');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->post('content/todo', [ContentController::class, 'todo'])
+    ->name('content.todo');

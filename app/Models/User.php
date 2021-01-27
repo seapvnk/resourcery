@@ -73,4 +73,14 @@ class User extends Authenticatable
     {
         return $this->favorites()->where(['course_id' => $courseId])->get()->first();
     }
+
+    public function lessionsDid()
+    {
+        return $this->belongsToMany(Content::class, 'todos');
+    }
+
+    public function didThisLession(int $lessionId)
+    {
+        return $this->lessionsDid()->where(['content_id' => $lessionId])->get()->first();
+    }
 }
