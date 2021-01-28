@@ -14,7 +14,7 @@
                 <div class="course-item d-flex mb-3">
                     
                     <div class="col course-item-text">
-                        @isset($lecture)
+                        @if(null !== Auth::user())
                             <input 
                                 style="border: 1px solid #ccc !important" 
                                 class="form-check-input" 
@@ -30,7 +30,7 @@
                             @else
                                 <i class="bi bi-file-text"></i>
                             @endif
-                        @endisset
+                        @endif
 
                         @isset($lecture)<a href="{{ route('course.learn', ['course' => $course->url, 'lecture' => $content->id]) }}">@endisset
                         
