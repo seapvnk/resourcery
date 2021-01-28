@@ -19,7 +19,7 @@
                 (24.120)
             </span>
             <span class="rating-number">
-                124.120 alunos
+                {{ $courseStudentsCount }} {{ $courseStudentsCount !== 1? 'alunos' : 'aluno' }}
             </span>
         </div>
         <p class="mt-2">Criado por <a class="link-author" href="">{{ $course->author->name }}</a></p>
