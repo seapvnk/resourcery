@@ -16,13 +16,15 @@
         <li><small class="px-2 py-2 mx-2 text-white" style="border-left: #ddd6 solid 1px"> {{ $course->name }}</small></li>
       </ul>
       
-      <p class="mx-2 rate-a-course" style="color: #ccc">
-        <i star-index="1" class="bi bi-star-fill"></i>
-        <i star-index="2" class="bi bi-star-fill"></i>
-        <i star-index="3" class="bi bi-star-fill"></i>
-        <i star-index="4" class="bi bi-star-fill"></i>
-        <i star-index="5" class="bi bi-star-fill"></i>
-      </p>
+      @if (null !== Auth::user() && null == Auth::user()->ratedThisCourse($course->id))
+        <p class="mx-2 rate-a-course" style="color: #ccc">
+          <i star-index="1" class="bi bi-star-fill"></i>
+          <i star-index="2" class="bi bi-star-fill"></i>
+          <i star-index="3" class="bi bi-star-fill"></i>
+          <i star-index="4" class="bi bi-star-fill"></i>
+          <i star-index="5" class="bi bi-star-fill"></i>
+        </p>
+      @endif
 
       <button class="btn btn-outline-light"><span class="bi bi-share"></span> Compartilhar</button>
     
@@ -33,6 +35,35 @@
 
 
 <script>
+
+
+$('.rate-a-course i').click(function(e) {
+  const rating = $(this).attr('star-index')
+
+  Swal.fire({
+      title: 'Deseja mesmo avaliar esse curso?',
+      showCancelButton: true,
+      confirmButtonText: `Sim`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire('Agradecemos sua avaliação!', '', 'success')
+     
+        $.ajax({
+            url: '{{ url('course/rate') }}',
+            data: {
+                rating,
+                course_id: {{ $course->id }},
+            },
+            type: "POST",
+            headers: {
+                'X-CSRF-Token': '{{ csrf_token() }}',
+            },
+        });
+
+        $('.rate-a-course').remove();
+      }
+  })
+})
 
 $('.rate-a-course i').hover(function() {
   const index = Number($(this).attr('star-index'))

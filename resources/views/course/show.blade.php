@@ -11,12 +11,12 @@
         <h1 class="h2 bold" style="width: 630px">{{ $course->name }}</h1>
         <p class="pt-2 description" style="font-size: 18px">{{ $course->description }}</p>
         <div class="card-course-rating">
-            <span class="star-number">4.6</span>
+            <span class="star-number">{{ sprintf("%.1f", $course->ratingAverage()) }}</span>
             <span class="star-rating">
-                @include('partials.rating', ['rating' => 4.6])
+                @include('partials.rating', ['rating' => $course->ratingAverage()])
             </span>
             <span class="rating-number">
-                (24.120)
+                ({{ $course->ratings() }})
             </span>
             <span class="rating-number">
                 {{ $courseStudentsCount }} {{ $courseStudentsCount !== 1? 'alunos' : 'aluno' }}

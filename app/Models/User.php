@@ -83,4 +83,14 @@ class User extends Authenticatable
     {
         return $this->lessionsDid()->where(['content_id' => $lessionId])->get()->first();
     }
+
+    public function ratedCourses()
+    {
+        return $this->belongsToMany(Course::class, 'course_rating');
+    }
+
+    public function ratedThisCourse(int $courseId)
+    {
+        return $this->ratedCourses()->where(['course_id' => $courseId])->get()->first();
+    }
 }

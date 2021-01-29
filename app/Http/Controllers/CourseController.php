@@ -28,9 +28,11 @@ class CourseController extends Controller
     public function show(string $course)
     {
         $course = Course::where(['url' => $course])->first();
+        $courseStudentsCount = $course->favoritedBy()->count();
 
         return view('course.show', [
             'course' => $course,
+            'courseStudentsCount' => $courseStudentsCount,
         ]);
     }
 
@@ -88,5 +90,32 @@ class CourseController extends Controller
         session()->flash('message-success', 'Curso deletado com sucesso!');
 
         return redirect()->route('instructor.index');
+    }
+
+    public function rate(Request $request)
+    {
+        $this->validate($request, [
+            'course_id' => 'required',
+            'rating' => 'required',
+        ]);
+
+        $course = Auth::user()
+            ->ratedCourses()
+            ->where(['course_id' => $request->course_id])
+            ->get()->first();
+
+        if (!$course) {
+            $course = COurse::findOrFail($request->course_id);
+            $course->ratedBy()->attach([
+                Auth::user()->id => [
+                    'rating' => $request->rating,
+                ],
+            ]);
+            
+        } else {
+            return response('ok', 400);
+        }
+
+        return response('ok', 200);
     }
 }

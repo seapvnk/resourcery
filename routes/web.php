@@ -105,3 +105,7 @@ Route::middleware(['auth:sanctum', 'verified'])
 Route::middleware(['auth:sanctum', 'verified'])
     ->post('content/todo', [ContentController::class, 'todo'])
     ->name('content.todo');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->post('course/rate', [CourseController::class, 'rate'])
+    ->name('course.rate');

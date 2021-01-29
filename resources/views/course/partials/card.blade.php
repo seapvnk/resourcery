@@ -18,12 +18,12 @@
 
         <small>{{ $course->author->name }}</small>
         <div class="card-course-rating">
-            <span class="star-number">4.6</span>
+            <span class="star-number">{{ sprintf("%.1f", $course->ratingAverage()) }}</span>
             <span class="star-rating">
-                @include('partials.rating', ['rating' => 4.6])
+                @include('partials.rating', ['rating' => $course->ratingAverage()])
             </span>
             <span class="rating-number">
-                (24.120)
+                ({{ $course->ratings() }})
             </span>
         </div>
         

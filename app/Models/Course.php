@@ -82,4 +82,19 @@ class Course extends Model
         return $this->belongsToMany(User::class, 'favorites');
     }
 
+    public function ratedBy()
+    {
+        return $this->belongsToMany(User::class, 'course_rating');
+    }
+
+    public function ratings()
+    {
+        return $this->ratedBy()->count();
+    }
+
+    public function ratingAverage()
+    {
+        return $this->ratedBy()->average('rating');
+    }
+
 }
