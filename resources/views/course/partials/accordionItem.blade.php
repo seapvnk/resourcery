@@ -14,7 +14,7 @@
                 <div class="course-item d-flex mb-3">
                     
                     <div class="col course-item-text">
-                        @if(null !== Auth::user())
+                        @if(null !== Auth::user() && isset($lecture))
                             <input 
                                 style="border: 1px solid #ccc !important" 
                                 class="form-check-input" 

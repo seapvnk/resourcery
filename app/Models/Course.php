@@ -94,7 +94,9 @@ class Course extends Model
 
     public function ratingAverage()
     {
-        return $this->ratedBy()->average('rating');
+        $rating = $this->ratedBy()->average('rating');
+
+        return $rating? $rating : 5;
     }
 
 }

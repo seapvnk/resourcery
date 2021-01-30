@@ -53,11 +53,6 @@
                 <a href="{{ url('/dashboard') }}" class="link-secondary text-decoration-none px-3">Meu aprendizado</a>
               </li>
 
-              <li class="nav-item">
-                <a href="{{ url('/dashboard') }}" class="link-secondary text-decoration-none px-2"> <i class="bi bi-heart"></i> </a>
-                <a href="{{ url('/dashboard') }}" class="link-secondary text-decoration-none px-2"> <i class="bi bi-bell"></i> </a>
-              </li>
-
               <li class="nav-item px-4">
                 <a href="{{ url('/user/profile') }}">
                   <img width=35 src="{{ Auth::user()->profile_photo_url }}" alt="" class="img rounded-circle">

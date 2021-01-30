@@ -72,7 +72,7 @@
 
 @section('content')
 
-    <div class="container m-4 show-container">
+    <div class="container m-4 show-container course-show">
 
         <div class="container mx-4 p-4 bg-light border rounded">
             <h3>O que você aprenderá</h3>
@@ -84,7 +84,7 @@
             </p>
         </div>
         
-        <div class="container course-content mx-4 pt-4"  style="padding: 0">
+        <div class="container course-content mx-4 pt-4 course-show"  style="padding: 0">
             
             <h2 class="py-4">Conteúdo do curso</h2>
 
