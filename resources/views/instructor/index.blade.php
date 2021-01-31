@@ -13,7 +13,7 @@
         <div class="container course-list">
             @foreach($courses as $course)
                 <div class="row">
-                    <div class="col">
+                    <div class="col-12">
                         @include('course.partials.card', ['isList' => true])
                     </div>
 
