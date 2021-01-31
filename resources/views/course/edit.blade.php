@@ -78,7 +78,7 @@
             </select>
         </div>
 
-        <input type="submit" value="Próximo" class="btn btn-control btn-red btn-lg mb-2">
+        <input type="submit" value="Salvar" class="btn btn-control btn-red btn-lg mb-2">
 
     </form>
 
