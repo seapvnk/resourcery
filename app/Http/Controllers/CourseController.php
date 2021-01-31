@@ -36,6 +36,32 @@ class CourseController extends Controller
         ]);
     }
 
+    public function edit(string $course)
+    {
+        $course = Course::where(['url' => $course])->first();
+        if (!$course) {
+            return redirect()->back();
+        }
+
+        return view('course.edit', [
+            'course' => $course,
+        ]);
+    }
+
+    public function save(Request $request)
+    {
+
+        $this->validate($request, [
+            'course_id' => 'required',
+        ]);
+
+        $course = Course::findOrFail($request->course_id);
+        $course->fill($request->all());
+        $course->save();
+
+        return redirect()->back();
+    }
+
     public function list(Request $request, string $category)
     {
         $search = $request->query('q', false);

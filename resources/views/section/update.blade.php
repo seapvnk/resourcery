@@ -42,6 +42,7 @@
 
         </div>
 
+        <a href="{{ route('course.edit', ['courseUrl' => $course->url]) }}" class="btn btn-control btn-blue btn-lg mb-2 text-white">Editar informações do curso</a>
         <input type="submit" value="Criar seção" class="btn btn-control btn-red btn-lg mb-2">
 
     </form>
