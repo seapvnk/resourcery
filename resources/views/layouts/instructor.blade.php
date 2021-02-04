@@ -22,7 +22,7 @@
 
     <title>@yield('title', 'Resourcery')</title>
 </head>
-<body>
+<body class="instructor">
 
     @include('partials.instructorNavigation')
 

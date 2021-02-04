@@ -24,3 +24,16 @@
     flex: 1 1 auto;
     padding: 0rem 1rem !important;
 }
+
+@media screen and (max-width: 768px) {
+    .create-course {
+        margin: 0 !important;
+        padding: 1rem !important;
+        flex-flow: column !important;
+    }
+
+    .create-course h1 {
+        padding: 0 !important;
+        width: 100% !important;
+    }
+}
