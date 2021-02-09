@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="./screenshots/category.png" alt="Screenshot Resourcery"/>
+</p>
+
 <h1 align="center">Resourcery</h1>
 <p align="center">An Udemy clone</p>
 
